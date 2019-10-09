@@ -26,7 +26,7 @@
 							<li><a href="index.php">главная</a></li>
 							<li><a href="about.php">о компании</a></li>
 							<li class="acting"><a href="#">услуги</a></li>
-							<li><a href="production.php">продукция</a></li>
+							<li><a href="production-partners.php">продукция</a></li>
 							<li><a href="partners.php">партнеры</a></li>
 							<li><a href="question.php">вопрос-ответ</a></li>
 							<li><a href="contact.php">контакты</a></li>
@@ -71,7 +71,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md">
-								<a href="#" class="more">ПОДРОБНЕЕ</a>
+								<a href="fservice.php" class="more">ПОДРОБНЕЕ</a>
 							</div>
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md">
-								<a href="#" class="more">ПОДРОБНЕЕ</a>
+								<a href="fservice.php" class="more">ПОДРОБНЕЕ</a>
 							</div>
 						</div>
 					</div>
@@ -129,7 +129,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md">
-								<a href="#" class="more">ПОДРОБНЕЕ</a>
+								<a href="fservice.php" class="more">ПОДРОБНЕЕ</a>
 							</div>
 						</div>
 					</div>
@@ -158,7 +158,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md">
-								<a href="#" class="more">ПОДРОБНЕЕ</a>
+								<a href="fservice.php" class="more">ПОДРОБНЕЕ</a>
 							</div>
 						</div>
 					</div>
@@ -187,7 +187,7 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md">
-								<a href="#" class="more">ПОДРОБНЕЕ</a>
+								<a href="fservice.php" class="more">ПОДРОБНЕЕ</a>
 							</div>
 						</div>
 					</div>

@@ -108,16 +108,19 @@ class ProductController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             if($images->load(Yii::$app->request->post())) {
-                $images->deleteImages($model->id);
                 $file = UploadedFile::getInstances($images, 'image');
-                foreach ($file as $v) {
-                    $images = new ProductImage();
-                    $time = time();
-                    $v->saveAs($images->path . $time . '_' . $v->baseName . '.' . $v->extension);
-                    $images->image = $time . '_' . $v->baseName . '.' . $v->extension;
-                    $images->product_id = $model->id;
-                    $images->save(false);
+                if($file != null) {
+                    $images->deleteImages($model->id);
+                    foreach ($file as $v) {
+                        $images = new ProductImage();
+                        $time = time();
+                        $v->saveAs($images->path . $time . '_' . $v->baseName . '.' . $v->extension);
+                        $images->image = $time . '_' . $v->baseName . '.' . $v->extension;
+                        $images->product_id = $model->id;
+                        $images->save(false);
+                    }
                 }
+
             }
 
             return $this->redirect(['view', 'id' => $model->id]);

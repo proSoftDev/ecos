@@ -26,7 +26,7 @@
 							<li class="acting"><a href="#">главная</a></li>
 							<li><a href="about.php">о компании</a></li>
 							<li><a href="services.php">услуги</a></li>
-							<li><a href="production.php">продукция</a></li>
+							<li><a href="production-partners.php">продукция</a></li>
 							<li><a href="partners.php">партнеры</a></li>
 							<li><a href="question.php">вопрос-ответ</a></li>
 							<li><a href="contact.php">контакты</a></li>
@@ -71,7 +71,7 @@
 		<div class="container service">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="ts mb-5">ТОО «Компания ECOS» предоставляет своим Заказчикам широкий спектр услуг своим заказчикам</h2>
+					<h2 class="ts mb-5">ТОО «Компания ECOS» предоставляет широйкий спектр услуг своим заказчикам</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -104,98 +104,7 @@
 			</div>
 		</div>
 		<div class="border mt-4"></div>
-		<div class="container nav">
-			<div class="row">
-				<div class="col-12">
-					<h2>Проектирование и строительство</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12 col-md-4 info-nav">
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Проектирование системы автоматического водяного и пенного пожаротушения</a>
-						<p class="dropdown-content">Проектирование системы автоматического водяного и пенного пожаротушения</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Проектирование системы порошкового и газового пожаротушения;</a>
-						<p class="dropdown-content">Проектирование системы порошкового и газового пожаротушения;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Проектирование системы пожарной, газовой и охранной  сигнализации;</a>
-						<p class="dropdown-content">Проектирование системы пожарной, газовой и охранной  сигнализации;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Проектирование системы пожарной, газовой и охранной  сигнализации;</a>
-						<p class="dropdown-content">Проектирование системы пожарной, газовой и охранной  сигнализации;</p>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-4 info-nav">
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Речевое оповещение, громкоговорящая и диспетчерская связь;</a>
-						<p class="dropdown-content">Речевое оповещение, громкоговорящая и диспетчерская связь;
-						</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Работы в области автоматизации технологических процессов;</a>
-						<p class="dropdown-content">Работы в области автоматизации технологических процессов;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Работы в области автоматизации технологических процессов;</a>
-						<p class="dropdown-content">Работы в области автоматизации технологических процессов;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Работы в области автоматизации технологических процессов;</a>
-						<p class="dropdown-content">Работы в области автоматизации технологических процессов;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Системы связи и инженерные системы;</a>
-						<p class="dropdown-content">Системы связи и инженерные системы;</p>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-4 info-nav">
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Создание концепции противопожарной и противоаварийной систем (АСУТП).</a>
-						<p class="dropdown-content">Создание концепции противопожарной и противоаварийной систем (АСУТП).</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Инженерные изыскания;</a>
-						<p class="dropdown-content">Инженерные изыскания;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Строительные работы;</a>
-						<p class="dropdown-content">Строительные работы;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Реконструкция существующих зданий;</a>
-						<p class="dropdown-content">Реконструкция существующих зданий;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Внутренние отделочные работы;</a>
-						<p class="dropdown-content">Внутренние отделочные работы;</p>
-					</div>
-					<div class="dropdown">
-						<input type="checkbox">
-						<a href="#">Монтаж инженерных сетей.;</a>
-						<p class="dropdown-content">Монтаж инженерных сетей.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="border mt-4"></div>
+		
 		<?php 
 			require_once('footer.php');
 		?>

@@ -5,7 +5,7 @@
             <nav class="menu" id="main-nav">
                 <ul>
                     <? foreach (Yii::$app->view->params['headerMenu'] as $v):?>
-                        <li class="<?=$v->url == "/product/all"?"acting":"";?>"><a href="<?=$v->url;?>"><?=$v->name;?></a></li>
+                        <li class="<?=$v->url == "/product/partners"?"acting":"";?>"><a href="<?=$v->url;?>"><?=$v->name;?></a></li>
                     <? endforeach;?>
                 </ul>
             </nav>

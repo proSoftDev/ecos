@@ -14,6 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+
     <div class="col-md-12 pl-0 pr-0">
         <div class="form-group" style="float: right;margin-top:7px;">
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

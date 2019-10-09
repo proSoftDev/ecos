@@ -28,7 +28,7 @@
 							<li><a href="index.php">главная</a></li>
 							<li><a href="about.php">о компании</a></li>
 							<li><a href="services.php">услуги</a></li>
-							<li class="acting"><a href="#">продукция</a></li>
+							<li class="acting"><a href="production-partners.php">продукция</a></li>
 							<li><a href="partners.php">партнеры</a></li>
 							<li><a href="question.php">вопрос-ответ</a></li>
 							<li><a href="contact.php">контакты</a></li>
@@ -40,7 +40,7 @@
 		<div class="container mt-5 mb-5">
 			<div class="row">
 				<div class="col-sm-12 col-md">
-					<p class="main-plink"><a href="index.php">Главная </a><span>/ </span>Продукция</p>
+					<p class="main-plink"><a href="index.php">Главная </a><span>/ </span><a href="production-partners.php">Продукция партнеров </a><span>/ </span>Продукция</p>
 				</div>
 			</div>
 		</div>
@@ -55,16 +55,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-1 jc-c">
-					<a href="#" class="inner-btn">Все</a>
+					<input id="f1" type="checkbox" class="hide">
+					<label for="f1" class="inner-btn">Все</label>
 				</div>
 				<div class="col-sm-12 col-md-3 jc-c">
 					<div class="dropdown">
 						<button class="inner-btn first-btn" type="button" data-toggle="dropdown">Производитель
 						</button>
 						<ul class="dropdown-menu">
-    						<li><a href="#">Ссылка_01</a></li>
-    						<li><a href="#">Ссылка_02</a></li>
-    						<li><a href="#">Ссылка_03</a></li>
+    						<li>
+								<input id="f2" type="checkbox" class="hide">
+								<label for="f2" class="category">АО “Тульский завод”</label>
+    						</li>
+    						<li>
+    							<input id="f3" type="checkbox" class="hide">
+    							<label for="f3" class="category">ООО “Металликум”</label>
+    						</li>
+    						<li>
+    							<input id="f4" type="checkbox" class="hide">
+    							<label for="f4" class="category">ООО “Стройцветмет”</label>
+    						</li>
   						</ul>
 					</div>
 				</div>
@@ -73,9 +83,18 @@
 						<button class="inner-btn second-btn" type="button" data-toggle="dropdown">Категории товара
 						</button>
 						<ul class="dropdown-menu">
-    						<li><a href="#">Ссылка_01</a></li>
-    						<li><a href="#">Ссылка_02</a></li>
-    						<li><a href="#">Ссылка_03</a></li>
+    						<li>
+    							<input id="f5" type="checkbox" class="hide">
+    							<label for="f5" class="category">Категория 1</label>
+    						</li>
+    						<li>
+    							<input id="f6" type="checkbox" class="hide">
+    							<label for="f6" class="category">Категория 2</label>
+    						</li>
+    						<li>
+    							<input id="f7" type="checkbox" class="hide">
+    							<label for="f7" class="category">Категория 3</label>
+    						</li>
   						</ul>
 					</div>
 				</div>
@@ -84,9 +103,19 @@
 						<button class="inner-btn third-btn" type="button" data-toggle="dropdown">Подкатегории товара
 						</button>
 						<ul class="dropdown-menu">
-    						<li><a href="#">Ссылка_01</a></li>
-    						<li><a href="#">Ссылка_02</a></li>
-    						<li><a href="#">Ссылка_03</a></li>
+    						<li>
+    							
+    							<input id="f8" type="checkbox" class="hide">
+    							<label for="f8" class="category">Податегория 1</label>
+    						</li>
+    						<li>
+    							<input id="f9" type="checkbox" class="hide">
+    							<label for="f9" class="category">Податегория 2</label>
+    						</li>
+    						<li>
+    							<input id="f10" type="checkbox" class="hide">
+    							<label for="f10" class="category">Податегория 3</label>
+    						</li>
   						</ul>
 					</div>
 				</div>

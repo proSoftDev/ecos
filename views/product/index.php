@@ -5,7 +5,7 @@
                 <nav class="menu" id="main-nav">
                     <ul>
                         <? foreach (Yii::$app->view->params['headerMenu'] as $v):?>
-                            <li class="<?=$v->url == "/product/all"?"acting":"";?>"><a href="<?=$v->url;?>"><?=$v->name;?></a></li>
+                            <li class="<?=$v->url == "/product/partners"?"acting":"";?>"><a href="<?=$v->url;?>"><?=$v->name;?></a></li>
                         <? endforeach;?>
                     </ul>
                 </nav>
@@ -35,7 +35,9 @@
                     </div>
                     <div class="col-sm-12 col-md-3 jc-c">
                         <div class="dropdown">
-                            <button class="inner-btn first-btn" type="button" data-toggle="dropdown"><?=Yii::$app->view->params['translation'][23]->text;?>
+                            <button class="inner-btn first-btn" type="button" data-toggle="dropdown">
+                                <? if(isset($_SESSION['partner_id'])):?><?=$current_partner->getName();?><?endif;?>
+                                <? if(!isset($_SESSION['partner_id'])):?><?=Yii::$app->view->params['translation'][23]->text;?><?endif;?>
                             </button>
                             <ul class="dropdown-menu">
                                 <? foreach ($manufacturer as $v):?>
@@ -49,9 +51,11 @@
                             <button class="inner-btn second-btn" type="button" data-toggle="dropdown"><?=Yii::$app->view->params['translation'][25]->text;?>
                             </button>
                             <ul class="dropdown-menu">
-                                <? foreach ($category as $v):?>
-                                    <li><a class="category" data-id="<?=$v->id;?>" style="cursor: pointer"><?=$v->getName();?></a></li>
-                                <? endforeach;?>
+                                <? if($category != null):?>
+                                    <? foreach ($category as $v):?>
+                                        <li><a class="category" data-id="<?=$v->id;?>" style="cursor: pointer"><?=$v->getName();?></a></li>
+                                    <? endforeach;?>
+                                <? endif;?>
                             </ul>
                         </div>
                     </div>
@@ -60,9 +64,11 @@
                             <button class="inner-btn third-btn" type="button" data-toggle="dropdown"><?=Yii::$app->view->params['translation'][26]->text;?>
                             </button>
                             <ul class="dropdown-menu">
-                                <? foreach ($subCategory as $v):?>
-                                    <li><a class="sub-category" data-id="<?=$v->id;?>" style="cursor: pointer"><?=$v->getName();?></a></li>
-                                <? endforeach;?>
+                                <? if($subCategory != null):?>
+                                    <? foreach ($subCategory as $v):?>
+                                        <li><a class="sub-category" data-id="<?=$v->id;?>" style="cursor: pointer"><?=$v->getName();?></a></li>
+                                    <? endforeach;?>
+                                <? endif;?>
                             </ul>
                         </div>
                     </div>
@@ -84,7 +90,7 @@
                                 <div class="container production-border">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-5">
-                                            <img src="<?=$images[0]->getImage();?>">
+                                            <img src="<?=$images != null?$images[0]->getImage():'/no-image.png';?>">
                                         </div>
                                         <div class="col-sm-12 col-md-7">
                                             <h4 class="h4">

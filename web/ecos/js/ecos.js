@@ -3,7 +3,6 @@ $(document).ready(function() {
 				$('.menu').parent().css('padding', '0');
 				$('.menu').parent().parent().parent().css({'padding': '0', 'margin': '0', 'max-width':  '100%'});
 			}
-
 }); 
 $(document).ready(function($) {
   let Nav = $('#main-nav').hcOffcanvasNav({
@@ -11,13 +10,7 @@ $(document).ready(function($) {
     disableBody: true
   });
 });
-$(document).ready(function(){
-  $('body').mousemove(function(e) {
-    let rXP = (e.pageX - this.offsetLeft-$(this).width()/2);
-    let rYP = (e.pageY - this.offsetTop-$(this).height()/2);
-    $('.ts').css('text-shadow', +rYP/100+'px '+rXP/100+'px rgba(102,102,153,0.7)' );
-   });
-});
+
 $(document).ready(function() {
 	window.addEventListener('scroll', function() {
 		let scrollPosNav = $('.nav').innerHTML = pageYOffset;

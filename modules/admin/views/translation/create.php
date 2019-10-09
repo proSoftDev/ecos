@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Translation */
 
 $this->title = 'Создание текста';
-$this->params['breadcrumbs'][] = ['label' => 'Translations', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Переводы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="translation-create">

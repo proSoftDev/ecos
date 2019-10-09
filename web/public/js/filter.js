@@ -1,6 +1,3 @@
-
-
-
 $('body').on('click', '.all',function(e){
     e.preventDefault();
     $.ajax({

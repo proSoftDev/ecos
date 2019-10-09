@@ -1,3 +1,4 @@
+
 .row {
 	align-items: stretch;
 	flex-flow: wrap row;
@@ -47,10 +48,10 @@
     background-color: #f5f5f5;
 }
 .main-plink {
-  font-size: 14px;
-  font-family: "Rubik";
-  color: #d0d0d0;
-  line-height: 1.286;
+  font-size: 14px !important;
+  font-family: "Rubik" !important;
+  color: #d0d0d0 !important;
+  line-height: 1.286 !important;
 }
 .main-plink a {
 	color: #4e799d;
@@ -151,6 +152,7 @@
 	border-collapse: collapse;
 } */
 .separator {
+  position: relative;
 	border: 1px solid rgb(218, 218, 218);
 	display: flex;
 	flex-flow: column wrap;
@@ -158,11 +160,26 @@
 	align-content: stretch;
 	justify-content: flex-end;
 	padding: 25px 0;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.separator p {
-
+.separator .partners-name {
+  text-align: center;
 	margin-top: 30px;
+  font-size: 16.445px;
+  font-weight: normal;
+  color: rgb(33, 33, 33);
+  text-transform: uppercase;
+  line-height: 4.378;
+  -moz-transform: matrix( 0.85213675213675,0,0,0.85132382892057,0,0);
+  -webkit-transform: matrix( 0.85213675213675,0,0,0.85132382892057,0,0);
+  -ms-transform: matrix( 0.85213675213675,0,0,0.85132382892057,0,0);
+
+}
+.separator p {
+  text-align: center;
+  margin-top: 30px;
   font-size: 16.445px;
   color: rgb(33, 33, 33);
   text-transform: uppercase;
@@ -172,6 +189,32 @@
   -ms-transform: matrix( 0.85213675213675,0,0,0.85132382892057,0,0);
 
 }
+.separator img {
+  transition: all .5s;
+}
+.separator:hover img, .separator:hover h2 {
+  filter: blur(.7px);
+}
+.separator:hover .moreOfProductions {
+  top: 45%;
+
+}
+.separator .moreOfProductions {
+    transition: all .8s;
+    position: absolute;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%);
+    color: #fff;
+    background-color: #4e799d;
+    text-decoration: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+}
+.separator .moreOfProductions:hover {
+  filter: grayscale(.6);
+}
+
 .separator:first-child {
 	border-right: none;
 	border-bottom: none;
@@ -294,21 +337,46 @@
 
 .partners p {
   font-size: 14px;
-  font-family: "Tahoma";
   color: rgb(0, 0, 0);
   line-height: 1.786;
   text-align: left;
 }
-.inner-btn {
+
+.production .inner-btn {
   animation: none;
   flex: 1;
   text-align: center;
-}
-.inner-btn:hover {
-  text-decoration: none;
-  color: rgb(70, 72, 78)
+  transition: all 0s;
+  outline: none;
 }
 
+.production input[type=checkbox]:checked ~ .inner-btn {
+  color: rgb(102, 102, 153); 
+}
+.production .inner-btn:hover {
+  text-decoration: none;
+  color: rgb(70, 72, 78);
+  cursor: pointer;
+
+}
+.production .dropdown-menu > li > label {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: 
+    #333;
+    white-space: nowrap;
+}
+.production .dropdown-menu > li > label:focus, .dropdown-menu > li > label:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+.production input[type=checkbox]:checked ~ .category {
+  color: rgb(102, 102, 153); 
+}
 .contact-info h4{
   font-size: 14px;
   font-family: "Rubik";
@@ -557,10 +625,7 @@
   padding-left: 20px;
 }
 
-.question-dashed-border {
-  padding-right: 105px;
-  border-left: 2px dashed #2d3d5a;
-}
+
 @media (max-width: 560px) {
   .sw-pages-menu {
     display: flex;
@@ -575,10 +640,31 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.inner-btn, .search {
-  margin-top: 15px;
-}
 .production .first-btn:after, .production .second-btn:after, .production .third-btn:after {
   top: 40%;
 }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .separator:first-child {
+    border-right: 1px solid rgb(218, 218, 218);
+    border-bottom: none;
+  }
+  .separator:nth-child(2) {
+    border-bottom: none;
+    border-right: 1px solid rgb(218, 218, 218);
+  }
+  .separator:nth-child(3) {
+    border-bottom: none;
+  }
+  .separator:nth-child(4) {
+    border-right: 1px solid rgb(218, 218, 218);
+    border-bottom: none;
+  }
+  .separator:nth-child(5) {
+    border-bottom: none;
+  }
+  .separator:last-child {
+    border-left: 1px solid rgb(218, 218, 218);;
+  }
 }

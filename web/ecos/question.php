@@ -26,7 +26,7 @@
 							<li><a href="index.php">главная</a></li>
 							<li><a href="about.php">о компании</a></li>
 							<li><a href="services.php">услуги</a></li>
-							<li><a href="production.php">продукция</a></li>
+							<li><a href="production-partners.php">продукция</a></li>
 							<li><a href="partners.php">партнеры</a></li>
 							<li class="acting"><a href="#">вопрос-ответ</a></li>
 							<li><a href="contact.php">контакты</a></li>
@@ -51,7 +51,7 @@
 				</div>
 			</div>
 
-			<div class="container question-dashed-border pl-5">
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-12">
 						<div class="dropdown">

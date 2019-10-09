@@ -21,7 +21,7 @@ class ProductController extends FrontendController
 
     public function actionIndex($id)
     {
-        $model = Menu::find()->where('url = "/product/all"')->one();
+        $model = Menu::find()->where('url = "/product/partners"')->one();
         $product = Product::findone($id);
         $images = ProductImage::findAll(['product_id'=>$id]);
         $documents = ProductFile::findAll(['product_id'=>$id]);
@@ -31,20 +31,44 @@ class ProductController extends FrontendController
         return $this->render('productin',compact('product','model','images','documents'));
     }
 
-
-    public function actionAll()
+    public function actionPartners()
     {
+        $model = Menu::find()->where('url = "/product/partners"')->one();
+        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
+        Yii::$app->view->params['page'] = 'production-partners';
+
+        return $this->render('partner',compact('model'));
+    }
+
+
+
+    public function actionAll($id)
+    {
+
         unset($_SESSION['category_id'],$_SESSION['sub_category_id'],$_SESSION['partner_id'],$_SESSION['text']);
-        $model = Menu::find()->where('url = "/product/all"')->one();
+        $model = Menu::find()->where('url = "/product/partners"')->one();
         $this->setMeta($model->metaN, $model->metaK, $model->metaD);
         Yii::$app->view->params['page'] = 'production';
 
-        $product = Product::find()->with('images')->all();
+        $_SESSION['partner_id'] = $id;
+        $current_partner = Catalog::findOne($id);
         $manufacturer = Catalog::find()->where('status = 1 AND level = 1')->all();
-        $category = Catalog::find()->where('status = 1 AND level = 2')->all();
-        $subCategory = Catalog::find()->where('status = 1 AND level = 3')->all();
 
-        return $this->render('index',compact('model','product','manufacturer','category','subCategory'));
+        $category = Catalog::find()->where('status = 1 AND level = 2 AND parent_id='.$id)->all();
+
+        if($category != null){
+            $arr = '(';
+            foreach ($category as $v){
+                $arr.=$v->id.',';
+            }
+            $arr = substr($arr,0,strlen($arr)-1);
+            $arr.= ')';
+            $subCategory = Catalog::find()->where('status = 1 AND level = 3 AND parent_id in '.$arr)->all();
+        }
+
+        $product = Catalog::getProducts($id, $_SESSION['text']);
+
+        return $this->render('index',compact('model','product','manufacturer','category','subCategory','current_partner'));
     }
 
 
