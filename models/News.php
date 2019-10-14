@@ -74,4 +74,8 @@ class News extends \yii\db\ActiveRecord
         $content = "content".Yii::$app->session["lang"];
         return $this->$content;
     }
+
+    public static function getAll(){
+        return News::find()->orderBy('id DESC')->all();
+    }
 }

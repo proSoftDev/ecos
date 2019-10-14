@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\ContactType */
 
 $this->title = 'Редактирвание : ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Виды', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => ' Список контактов', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

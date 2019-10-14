@@ -4,12 +4,12 @@ namespace app\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\ContactType;
+use app\models\ContactTypes;
 
 /**
- * ContactTypeSearch represents the model behind the search form of `app\models\ContactType`.
+ * ContactTypesSearch represents the model behind the search form of `app\models\ContactTypes`.
  */
-class ContactTypeSearch extends ContactType
+class ContactTypesSearch extends ContactTypes
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class ContactTypeSearch extends ContactType
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['name',  'name_en',  'name_kz'], 'safe'],
+            [['id', 'contact_type_id'], 'integer'],
+            [['content', 'url', 'content_en', 'content_kz'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class ContactTypeSearch extends ContactType
      */
     public function search($params)
     {
-        $query = ContactType::find();
+        $query = ContactTypes::find();
 
         // add conditions that should always apply here
 
@@ -59,11 +59,13 @@ class ContactTypeSearch extends ContactType
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'contact_type_id' => $this->contact_type_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'name_en', $this->name_en])
-            ->andFilterWhere(['like', 'name_kz', $this->name_kz]);
+        $query->andFilterWhere(['like', 'content', $this->content])
+            ->andFilterWhere(['like', 'url', $this->url])
+            ->andFilterWhere(['like', 'content_en', $this->content_en])
+            ->andFilterWhere(['like', 'content_kz', $this->content_kz]);
 
         return $dataProvider;
     }

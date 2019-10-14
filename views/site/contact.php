@@ -58,54 +58,64 @@
 
 
 <div id="sw-page_01" class="container contact-info">
-    <div class="row mt-5">
-        <div class="col-sm-12 col-md-4">
-            <?=$contact[0]->getContent();?>
+    <? foreach ($contact[0]->types as $v):?>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <?=$v->getContent();?>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <iframe src="<?=$v->url;?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-8">
-            <iframe src="<?=$contact[0]->getIframeUrl();?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </div>
+    <? endforeach;?>
 </div>
 <div id="sw-page_02" style="display: none;" class="container contact-info">
-    <div class="row mt-5">
-        <div class="col-sm-12 col-md-4">
-            <h<?=$contact[1]->getContent();?>
+    <? foreach ($contact[1]->types as $v):?>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <?=$v->getContent();?>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <iframe src="<?=$v->url;?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-8">
-            <iframe src="<?=$contact[1]->getIframeUrl();?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </div>
+    <? endforeach;?>
 </div>
 <div id="sw-page_03" style="display: none;" class="container contact-info">
-    <div class="row mt-5">
-        <div class="col-sm-12 col-md-4">
-            <h<?=$contact[2]->getContent();?>
+    <? foreach ($contact[2]->types as $v):?>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <?=$v->getContent();?>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <iframe src="<?=$v->url;?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-8">
-            <iframe src="<?=$contact[2]->getIframeUrl();?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </div>
+    <? endforeach;?>
 </div>
 <div id="sw-page_04" style="display: none;" class="container contact-info">
-    <div class="row mt-5">
-        <div class="col-sm-12 col-md-4">
-            <h<?=$contact[3]->getContent();?>
+    <? foreach ($contact[3]->types as $v):?>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <?=$v->getContent();?>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <iframe src="<?=$v->url;?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-8">
-            <iframe src="<?=$contact[3]->getIframeUrl();?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </div>
+    <? endforeach;?>
 </div>
 <div id="sw-page_05" style="display: none;" class="container contact-info">
-    <div class="row mt-5">
-        <div class="col-sm-12 col-md-4">
-            <h<?=$contact[4]->getContent();?>
+    <? foreach ($contact[4]->types as $v):?>
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <?=$v->getContent();?>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <iframe src="<?=$v->url;?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-8">
-            <iframe src="<?=$contact[4]->getIframeUrl();?>"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-    </div>
+    <? endforeach;?>
 </div>
 
 <?=$this->render('/partials/partner.php')?>

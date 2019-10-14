@@ -31,7 +31,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="4000">
         <div class="carousel-inner">
             <? $status = 'active';$m=0;?>
-            <? foreach (Yii::$app->view->params['partner'] as $v):?>
+            <? foreach ($category as $v):?>
                 <? $m++;?>
                 <? if($m % 6 == 1):?>
                     <div class="carousel-item <?=$status;?>">
@@ -39,8 +39,8 @@
                     <div class="row">
                 <? endif;?>
                 <div class="col-sm-12 col-md-4 separator">
-                    <img src="<?=$v->getImage();?>">
-                    <h2><?=$v->getName();?></h2>
+<!--                    <img src="--><?//=$v->getImage();?><!--">-->
+                    <p><?=$v->getName();?></p>
                     <a class="moreOfProductions" href="/product/all?id=<?=$v->id;?>"><?=Yii::$app->view->params['translation'][39]->text;?></a>
                 </div>
                 <? if($m % 6 == 0):?>

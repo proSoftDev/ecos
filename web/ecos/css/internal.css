@@ -341,7 +341,9 @@
   line-height: 1.786;
   text-align: left;
 }
-
+.partner .tulsk-logo {
+  
+}
 .production .inner-btn {
   animation: none;
   flex: 1;
@@ -383,7 +385,6 @@
   color: rgb(33, 33, 33);
   font-weight: bold;
   line-height: 1.714;
-  padding-right: 40%;
   
 
 }
@@ -398,7 +399,6 @@
   font-family: "Rubik";
   color: rgb(33, 33, 33);
   line-height: 1.75;
-  padding-right: 30%;
   margin-bottom: 0;
 }
 .contact-info a[href^="tel"] {
@@ -425,6 +425,10 @@
   position: relative;
   left: -20px;
   top: 0;
+}
+.contact-info .col-sm-12.col-md-12 {
+  display: flex;
+  flex-flow: column wrap;
 }
 .contact-info a:hover {
   text-decoration: none;

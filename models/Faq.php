@@ -67,4 +67,8 @@ class Faq extends \yii\db\ActiveRecord
         $name = "question".Yii::$app->session["lang"];
         return $this->$name;
     }
+
+    public static function getAll(){
+        return Faq::find()->where('status = 1')->orderBy('id DESC')->all();
+    }
 }

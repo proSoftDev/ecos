@@ -57,19 +57,19 @@
 					<img src="images/partner-logo_01.png">
 					<p>АО “Тульский завод”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_02.png">
 					<p>ООО “Металликум”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_03.png">
 					<p>ООО “Стройцветмет”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				
 			</div>
@@ -80,19 +80,19 @@
 					<img src="images/partner-logo_01.png">
 					<p>АО “Тульский завод”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_02.png">
 					<p>ООО “Металликум”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_03.png">
 					<p>ООО “Стройцветмет”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				
 			</div>
@@ -103,19 +103,19 @@
 					<img src="images/partner-logo_01.png">
 					<p>АО “Тульский завод”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_02.png">
 					<p>ООО “Металликум”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				<div class="col-sm-12 col-md-4 separator">
 					<img src="images/partner-logo_03.png">
 					<p>ООО “Стройцветмет”</p>
 					<p>По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст</p>
-					<a href="#" class="more">Подробнее</a>
+					<a href="fpartner.php" class="more">Подробнее</a>
 				</div>
 				
 			</div>

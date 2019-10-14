@@ -42,7 +42,7 @@
 				</div>
 			</div>
 		</div>
-	<div class="services-content">
+	    <div class="services-content">
 		<div class="container">
 			<div class="row mt-5 mb-4">
 				<div class="col-sm-12 col-md">

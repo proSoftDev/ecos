@@ -20,19 +20,20 @@ class NewsController extends FrontendController
     public function actionIndex($id)
     {
         $news = News::findOne($id);
-        $this->setMeta($news->getName(), null, null);
-        Yii::$app->view->params['page'] = 'news';
 
-        return $this->render('newsin',compact('news'));
+        $this->setMeta($news->getName());
+        $this->setClass('news');
+
+        return $this->render('inner',compact('news'));
     }
 
     public function actionAll(){
 
-        $model = Menu::find()->where('url = "/news/all"')->one();
-        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'news';
+        $model = Menu::getModel("/news/all");
+        $news = News::getAll();
 
-        $news = News::find()->orderBy('id DESC')->all();
+        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
+        $this->setClass('news');
 
         return $this->render('index',compact('model','news'));
     }

@@ -60,6 +60,11 @@ class Feedback extends \yii\db\ActiveRecord
         $this->email = $email;
         $this->content = $content;
         $this->isRead = 0;
-        return $this->save(false);
+        if($this->save(false)){
+            $array = ['status' => 1];
+        }else{
+            $array = ['status' => 0];
+        }
+        return $array;
     }
 }

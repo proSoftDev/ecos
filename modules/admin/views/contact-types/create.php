@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ContactType */
+/* @var $model app\models\ContactTypes */
 
 $this->title = 'Создание';
-$this->params['breadcrumbs'][] = ['label' => ' Список контактов', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Содержание', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="contact-type-create">
+<div class="contact-types-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

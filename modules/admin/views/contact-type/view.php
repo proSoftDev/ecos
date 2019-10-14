@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\ContactType */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Виды', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => ' Список контактов', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -31,32 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            [
-                'format' => 'raw',
-                'attribute' => 'content',
-                'value' => function($data){
-                    return $data->content;
-                }
-            ],
-            'iframe',
             'name_en',
-            [
-                'format' => 'raw',
-                'attribute' => 'content_en',
-                'value' => function($data){
-                    return $data->content_en;
-                }
-            ],
-            'iframe_en',
             'name_kz',
-            [
-                'format' => 'raw',
-                'attribute' => 'content_kz',
-                'value' => function($data){
-                    return $data->content_kz;
-                }
-            ],
-            'iframe_kz',
         ],
     ]) ?>
 

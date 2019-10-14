@@ -78,4 +78,9 @@ class Service extends \yii\db\ActiveRecord
         return $this->$content;
     }
 
+    public static function getAll(){
+        return Service::find()->all();
+    }
+
+
 }

@@ -165,7 +165,15 @@ AdminAsset::register($this);
                             'url' => '#',
                             'items' => [
                                 ['label' => 'Наши контакты', 'icon' => 'fa fa-user', 'url' => ['/admin/contact/'],'active' => $this->context->id == 'contact'],
-                                ['label' => 'Виды', 'icon' => 'fa fa-user', 'url' => ['/admin/contact-type/'],'active' => $this->context->id == 'contact-type'],
+                                [
+                                    'label' => 'Виды',
+                                    'icon' => 'fa fa-user',
+                                    'url' => '#',
+                                    'items' => [
+                                        ['label' => 'Список контактов', 'icon' => 'fa fa-user', 'url' => ['/admin/contact-type/'],'active' => $this->context->id == 'contact-type'],
+                                        ['label' => 'Содержание', 'icon' => 'fa fa-user', 'url' => ['/admin/contact-types/'],'active' => $this->context->id == 'contact-types'],
+                                    ],
+                                ],
                             ],
                         ],
 
@@ -214,7 +222,7 @@ AdminAsset::register($this);
     $(document).ready(function(){
         var editor = CKEDITOR.replaceAll();
         CKFinder.setupCKEditor( editor );
-    })
+    });
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 </body>

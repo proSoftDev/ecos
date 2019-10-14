@@ -19,20 +19,20 @@ class ServiceController extends FrontendController
     public function actionIndex($id)
     {
         $service = Service::findOne($id);
-        $this->setMeta($service->getName(), null, null);
-        Yii::$app->view->params['page'] = 'service';
+        $this->setMeta($service->getName());
+        $this->setClass('services');
 
-        return $this->render('servicein',compact('service'));
+        return $this->render('inner',compact('service'));
     }
 
 
-    public function actionAll(){
-
-        $model = Menu::find()->where('url = "/service/all"')->one();
-        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'services';
-
+    public function actionAll()
+    {
+        $model = Menu::getModel("/service/all");
         $service = Service::find()->all();
+
+        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
+        $this->setClass('services');
 
         return $this->render('index',compact('model','service'));
     }

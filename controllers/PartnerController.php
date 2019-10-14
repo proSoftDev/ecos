@@ -11,7 +11,6 @@ namespace app\controllers;
 
 use app\models\Catalog;
 use app\models\Menu;
-use app\models\Partner;
 use Yii;
 
 class PartnerController extends FrontendController
@@ -19,20 +18,22 @@ class PartnerController extends FrontendController
 
     public function actionIndex($id)
     {
-        $partner = Catalog::findOne($id);
-        $this->setMeta($partner->getName(), null, null);
-        Yii::$app->view->params['page'] = 'partner';
 
-        return $this->render('partnerin',compact('partner'));
+        $partner = Catalog::findOne($id);
+        $this->setMeta($partner->getName());
+        $this->setClass('partners');
+
+        return $this->render('inner',compact('partner'));
     }
 
 
     public function actionAll(){
 
-        $model = Menu::find()->where('url = "/partner/all"')->one();
+        $model = Menu::getModel("/partner/all");
+        $partners = Catalog::getAllCatalog();
+
         $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'partners';
-        $partners = Catalog::find()->where('level=1 && status=1')->orderBy('sort ASC')->all();
+        $this->setClass('partners');
 
         return $this->render('index',compact('model','partners'));
     }

@@ -15,7 +15,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm-12 col-md">
-            <p class="main-plink"><a href="/"><?=Yii::$app->view->params['main']->name;?> </a><span>/ </span>Поиск</p>
+            <p class="main-plink"><a href="/"><?=Yii::$app->view->params['main']->name;?> </a><span>/ </span><?=Yii::$app->view->params['translation'][0]->text;?></p>
         </div>
     </div>
 </div>
@@ -25,9 +25,9 @@
             <div class="col-sm-12 col-md">
 <!--                <h2 class="services-h2">Поиск</h2>-->
                 <?if($count){?>
-                    <p class="invest-body-text" style=";margin-bottom: 20px;">Результаты поиска по запросу <span style="font-weight: bold;"><?=$search?></span>.</p>
+                    <p class="invest-body-text" style=";margin-bottom: 20px;"><?=Yii::$app->view->params['translation'][17]->text;?> <span style="font-weight: bold;"><?=$search?></span>.</p>
                 <?}else{?>
-                    <p class="invest-body-text" style="font-size: 22px;margin-bottom: 20px;">По запросу <span style="font-weight: bold;"><?=$search?></span> ничего не найдено.</p>
+                    <p class="invest-body-text" style="font-size: 22px;margin-bottom: 20px;"><?=Yii::$app->view->params['translation'][18]->text;?> <span style="font-weight: bold;"><?=$search?></span> <?=Yii::$app->view->params['translation'][19]->text;?>.</p>
                 <?}?>
             </div>
         </div>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 col-md">
-                                <a href="<?=$menu[1]->url;?>" class="more">ПОДРОБНЕЕ</a>
+                                <a href="<?=$menu[1]->url;?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md">
-                            <a href="<?=$menu[5]->url;?>" class="more">ПОДРОБНЕЕ</a>
+                            <a href="<?=$menu[5]->url;?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md">
-                            <a href="/news?id<?=$v->id?>" class="more">ПОДРОБНЕЕ</a>
+                            <a href="/news?id=<?=$v->id?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md">
-                            <a href="/partner?id=<?=$v->id;?>" class="more">ПОДРОБНЕЕ</a>
+                            <a href="/partner?id=<?=$v->id;?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
                         </div>
                     </div>
                 </div>
@@ -239,13 +239,65 @@
     <? endif;?>
     <? endforeach;?>
 
-    <? if($service != null):?>
+    <? if($product != null):?>
         <div class="border mt-5 mb-5"></div>
     <? endif;?>
 
     <? endif;?>
     <!--End Partner-->
 
+
+
+
+    <!--Product-->
+    <? if($product != null):?>
+        <div class="container">
+            <div class="row mt-5 mb-4">
+                <div class="col-sm-12 col-md">
+                    <h2 class="services-h2"><?=$menu[3]->name;?></h2>
+                </div>
+            </div>
+        </div>
+
+        <? $m = 0;?>
+        <? foreach ($product as $v):?>
+            <? $m++;?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 col-md">
+                                    <h3><?=$v->getName();?></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md">
+                                    <p>
+                                        <?=\app\controllers\ContentController::cutStr($v->getContentA(),400);?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md">
+                                    <a href="/product?id=<?=$v->id;?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <? if(count($product) > $m):?>
+                <br><br>
+            <? endif;?>
+        <? endforeach;?>
+
+        <? if($service != null):?>
+            <div class="border mt-5 mb-5"></div>
+        <? endif;?>
+
+    <? endif;?>
+    <!--End Product-->
 
 
 
@@ -283,7 +335,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md">
-                            <a href="/service?id=<?=$v->id;?>" class="more">ПОДРОБНЕЕ</a>
+                            <a href="/service?id=<?=$v->id;?>" class="more"><?=Yii::$app->view->params['translation'][16]->text;?></a>
                         </div>
                     </div>
                 </div>

@@ -5,13 +5,11 @@ namespace app\controllers;
 
 use app\models\About;
 use app\models\Banner;
-use app\models\Catalog;
 use app\models\ContactType;
+use app\models\Emailforrequest;
 use app\models\Faq;
 use app\models\Feedback;
 use app\models\Menu;
-use app\models\News;
-use app\models\Partner;
 use app\models\Service;
 
 use Yii;
@@ -67,26 +65,25 @@ class SiteController extends FrontendController
 
     public function actionIndex()
     {
-        $model = Menu::find()->where('url = "/"')->one();
+        $model = Menu::getModel("/");
+        $banner = Banner::getAll();
+        $services = Service::getAll();
+
+        $this->setClass('main');
         $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'main';
 
-        $banner = Banner::find()->all();
-        $services = Service::find()->all();
-        $catalog = Catalog::find()->where('level=1 && status=1')->orderBy('sort ASC')->all();
-
-        return $this->render('index',compact('banner','services','catalog'));
+        return $this->render('index',compact('banner','services'));
     }
 
 
     public function actionAbout(){
 
-        $model = Menu::find()->where('url = "/site/about"')->one();
-        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'about';
+        $model = Menu::getModel("/site/about");
+        $about = About::getAll();
 
-        $pageName = $model->name;
-        $about = About::find()->all();
+        $this->setClass('about');
+        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
+
         return $this->render('about',compact('model','about'));
     }
 
@@ -97,11 +94,12 @@ class SiteController extends FrontendController
 
     public function actionFaq(){
 
-        $model = Menu::find()->where('url = "/site/faq"')->one();
-        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'question';
+        $model = Menu::getModel("/site/faq");
+        $faq = Faq::getAll();
 
-        $faq = Faq::find()->where('status = 1')->orderBy('id DESC')->all();
+        $this->setClass('question');
+        $this->setMeta($model->metaN, $model->metaK, $model->metaD);
+
         return $this->render('faq',compact('faq','model'));
     }
 
@@ -111,14 +109,14 @@ class SiteController extends FrontendController
 
     public function actionContact(){
 
-        $model = Menu::find()->where('url = "/site/contact"')->one();
+
+        $model = Menu::getModel("/site/contact");
+        $contact = ContactType::getAll();
+
+        $this->setClass('contact');
         $this->setMeta($model->metaN, $model->metaK, $model->metaD);
-        Yii::$app->view->params['page'] = 'contact';
 
-        $pageName = $model->name;
-        $contact = ContactType::find()->limit(5)->all();
-
-        return $this->render('contact',compact('pageName','contact'));
+        return $this->render('contact',compact('model','contact'));
     }
 
 
@@ -128,40 +126,37 @@ class SiteController extends FrontendController
 
     public function actionRequest()
     {
-
         $model = new Feedback();
-
-        $name = $_GET['name'];
-        $phone = $_GET['phone'];
-        $email = $_GET['email'];
-        $content = $_GET['content'];
-
-        if($model->saveRequest($name,$phone, $email, $content))
-        {
-            $array = ['status' => 1];
-        }else{
-            $array = ['status' => 0];
-        }
-        return json_encode($array);
+        $response = $model->saveRequest($_GET['name'],$_GET['phone'], $_GET['email'], $_GET['content']);
+        return json_encode($response);
     }
 
 
-    public function actionRequestEmail(){
+    public function actionRequestEmail()
+    {
+        $response = $this->sendRequest($_GET['name'],$_GET['phone'], $_GET['email'], $_GET['content']);
+        return json_encode($response);
+    }
 
-        $name = $_GET['name'];
-        $phone = $_GET['phone'];
-        $email = $_GET['email'];
-        $content = $_GET['content'];
 
-        if($this->sendRequest($name,$phone, $email, $content))
-        {
+    private function sendRequest($name,$phone, $email, $content) {
+
+        $admin_email = Emailforrequest::getAdminEmail();
+        $emailSend = Yii::$app->mailer->compose()
+            ->setFrom('sdulife.kz@gmail.com')
+            ->setTo($admin_email)
+            ->setSubject('Клиент хочет связаться с вами')
+            ->setHtmlBody("<p>ФИО: $name</p>
+                                 <p>Email: $email</p>
+                                 <p>Телефон: $phone</p>
+                                 <p>Сообщение: $content</p>");
+        if($emailSend->send()){
             $array = ['status' => 1];
         }else{
             $array = ['status' => 0];
         }
 
-        return json_encode($array);
-
+        return $array;
 
     }
 

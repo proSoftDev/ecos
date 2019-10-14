@@ -34,17 +34,6 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
-                <?php
-                echo $form->field($model, 'content_en')->widget(CKEditor::className(),[
-                    'editorOptions' => [
-                        'preset' => 'full', // basic, standard, full
-                        'inline' => false, //по умолчанию false
-                    ],
-                ]);
-                ?>
-
-                <?= $form->field($model, 'iframe_en')->textarea() ?>
-
 
             </div>
 
@@ -52,33 +41,12 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'name_kz')->textInput(['maxlength' => true]) ?>
 
-                <?php
-                echo $form->field($model, 'content_kz')->widget(CKEditor::className(),[
-                    'editorOptions' => [
-                        'preset' => 'full', // basic, standard, full
-                        'inline' => false, //по умолчанию false
-                    ],
-                ]);
-                ?>
-
-                <?= $form->field($model, 'iframe_kz')->textarea() ?>
 
             </div>
 
             <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade show active in">
 
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-                <?php
-                echo $form->field($model, 'content')->widget(CKEditor::className(),[
-                    'editorOptions' => [
-                        'preset' => 'full', // basic, standard, full
-                        'inline' => false, //по умолчанию false
-                    ],
-                ]);
-                ?>
-
-                <?= $form->field($model, 'iframe')->textarea() ?>
 
             </div>
         </div>

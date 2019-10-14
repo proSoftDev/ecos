@@ -24,7 +24,7 @@
 				<div class="col-sm-12 col-md">
 					<nav class="menu" id="main-nav">
 						<ul>
-							<li class="acting"><a href="#">главная</a></li>
+							<li><a href="index.php">главная</a></li>
 							<li><a href="about.php">о компании</a></li>
 							<li><a href="services.php">услуги</a></li>
 							<li><a href="production-partners.php">продукция</a></li>
@@ -57,25 +57,25 @@
 						<img src="images/news-img_01.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_02.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_03.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_03.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 				</div>
 				<div class="row mt-5">
@@ -83,25 +83,25 @@
 						<img src="images/news-img_01.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_02.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_03.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 					<div class="col-sm-12 col-md-3">
 						<img src="images/news-img_03.png">
 						<h3>Офис компании переехал по новому адресу</h3>
 						<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать</p>
-						<a href="#" class="more">ПОДРОБНЕЕ</a>
+						<a href="fnews.php" class="more">ПОДРОБНЕЕ</a>
 					</div>
 				</div>
 			</div>

@@ -87,6 +87,10 @@ class Product extends \yii\db\ActiveRecord
         return $this->hasMany(ProductImage::className(), ['product_id' => 'id']);
     }
 
+    public function getDocuments(){
+        return $this->hasMany(ProductFile::className(), ['product_id' => 'id']);
+    }
+
     public function getName(){
         $name = "name".Yii::$app->session["lang"];
         return $this->$name;
@@ -112,6 +116,12 @@ class Product extends \yii\db\ActiveRecord
         $name = "name".Yii::$app->session["lang"];
         return $this->catalog->$name;
     }
+
+    public static function getAllProduct(){
+        return Product::find()->with('images')->all();
+    }
+
+
 
 
 }

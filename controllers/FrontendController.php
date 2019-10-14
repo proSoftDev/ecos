@@ -66,15 +66,9 @@ class FrontendController extends Controller
     }
 
 
-    protected function sendNewPassword($email, $code) {
-        $emailSend = Yii::$app->mailer->compose()
-            ->setFrom('sdulife.kz@gmail.com')
-            ->setTo($email)
-//            ->setSubject('Update password')
-
-            ->setHtmlBody("<p> Код для изменение пароля : $code</p>");
-        return $emailSend->send();
-
+    protected function setClass($name){
+        Yii::$app->view->params['page'] = $name;
     }
+
 
 }

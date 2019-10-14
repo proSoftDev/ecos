@@ -31,8 +31,7 @@ class ContactType extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'content', 'name_en', 'content_en', 'name_kz', 'content_kz','iframe', 'iframe_en', 'iframe_kz'], 'required'],
-            [['content', 'content_en', 'content_kz','iframe', 'iframe_en', 'iframe_kz'], 'string'],
+            [['name','name_en','name_kz'], 'required'],
             [['name', 'name_en', 'name_kz'], 'string', 'max' => 255],
         ];
     }
@@ -45,14 +44,8 @@ class ContactType extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Заголовок',
-            'content' => 'Содержание',
-            'iframe' => 'Ссылка для карту',
             'name_en' => 'Заголовок (EN)',
-            'content_en' => 'Содержание (EN)',
-            'iframe_en' => 'Ссылка для карту (EN)',
             'name_kz' => 'Заголовок (KZ)',
-            'content_kz' => 'Содержание (KZ)',
-            'iframe_kz' => 'Ссылка для карту (KZ)',
         ];
     }
 
@@ -61,13 +54,18 @@ class ContactType extends \yii\db\ActiveRecord
         return $this->$name;
     }
 
-    public function getContent(){
-        $content = "content".Yii::$app->session["lang"];
-        return $this->$content;
+
+    public static function getAll(){
+        return ContactType::find()->limit(5)->all();
     }
 
-    public function getIframeUrl(){
-        $url = "iframe".Yii::$app->session["lang"];
-        return $this->$url;
+
+    public static function getList(){
+        return \yii\helpers\ArrayHelper::map(ContactType::find()->all(),'id','name');
     }
+
+    public function getTypes(){
+        return $this->hasMany(ContactTypes::className(), ['contact_type_id' => 'id']);
+    }
+
 }

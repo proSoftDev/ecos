@@ -72,4 +72,9 @@ class Banner extends \yii\db\ActiveRecord
         $name = "subname".Yii::$app->session["lang"];
         return $this->$name;
     }
+
+    public static function getAll(){
+        return Banner::find()->all();
+    }
+
 }

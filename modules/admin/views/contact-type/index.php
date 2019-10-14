@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\search\ContactTypeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = ' Виды';
+$this->title = '  Список контактов';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="contact-type-index">
@@ -27,11 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-//            'content:ntext',
-//            'name_en',
-//            'content_en:ntext',
-            //'name_kz',
-            //'content_kz:ntext',
+
 
             ['class' => 'yii\grid\ActionColumn','template'=>'{update} {view}'],
         ],

@@ -41,4 +41,9 @@ class Emailforrequest extends \yii\db\ActiveRecord
             'email' => 'Email',
         ];
     }
+
+    public static function getAdminEmail(){
+        $admin = Emailforrequest::find()->one();
+        return $admin->email;
+    }
 }

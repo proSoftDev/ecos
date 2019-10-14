@@ -84,4 +84,8 @@ class Menu extends \yii\db\ActiveRecord
         return $this->$name;
     }
 
+    public static function getModel($url){
+        return Menu::find()->where('url = "'.$url.'"')->one();
+    }
+
 }

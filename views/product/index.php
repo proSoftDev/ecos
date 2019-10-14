@@ -37,7 +37,7 @@
                         <div class="dropdown">
                             <button class="inner-btn first-btn" type="button" data-toggle="dropdown">
                                 <? if(isset($_SESSION['partner_id'])):?><?=$current_partner->getName();?><?endif;?>
-                                <? if(!isset($_SESSION['partner_id'])):?><?=Yii::$app->view->params['translation'][23]->text;?><?endif;?>
+                                <? if(!isset($_SESSION['partner_id'])):?> <?=Yii::$app->view->params['translation'][24]->text;?><?endif;?>
                             </button>
                             <ul class="dropdown-menu">
                                 <? foreach ($manufacturer as $v):?>
@@ -48,7 +48,9 @@
                     </div>
                     <div class="col-sm-12 col-md-2 jc-c">
                         <div class="dropdown">
-                            <button class="inner-btn second-btn" type="button" data-toggle="dropdown"><?=Yii::$app->view->params['translation'][25]->text;?>
+                            <button class="inner-btn second-btn" type="button" data-toggle="dropdown">
+                                <? if(isset($_SESSION['category_id'])):?><?=$current_category->getName();?><?endif;?>
+                                <? if(!isset($_SESSION['category_id'])):?> <?=Yii::$app->view->params['translation'][25]->text;?><?endif;?>
                             </button>
                             <ul class="dropdown-menu">
                                 <? if($category != null):?>
