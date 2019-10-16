@@ -12,6 +12,7 @@ namespace app\controllers;
 use app\models\Menu;
 use app\models\News;
 use Yii;
+use yii\web\NotFoundHttpException;
 
 class NewsController extends FrontendController
 {
@@ -20,7 +21,9 @@ class NewsController extends FrontendController
     public function actionIndex($id)
     {
         $news = News::findOne($id);
-
+        if(!$news){
+            throw new NotFoundHttpException();
+        }
         $this->setMeta($news->getName());
         $this->setClass('news');
 

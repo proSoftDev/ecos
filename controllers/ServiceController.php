@@ -12,6 +12,7 @@ namespace app\controllers;
 use app\models\Menu;
 use app\models\Service;
 use Yii;
+use yii\web\NotFoundHttpException;
 
 class ServiceController extends FrontendController
 {
@@ -19,6 +20,9 @@ class ServiceController extends FrontendController
     public function actionIndex($id)
     {
         $service = Service::findOne($id);
+        if(!$service){
+            throw new NotFoundHttpException();
+        }
         $this->setMeta($service->getName());
         $this->setClass('services');
 

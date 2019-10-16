@@ -12,6 +12,7 @@ namespace app\controllers;
 use app\models\Catalog;
 use app\models\Menu;
 use Yii;
+use yii\web\NotFoundHttpException;
 
 class PartnerController extends FrontendController
 {
@@ -20,6 +21,9 @@ class PartnerController extends FrontendController
     {
 
         $partner = Catalog::findOne($id);
+        if(!$partner){
+            throw new NotFoundHttpException();
+        }
         $this->setMeta($partner->getName());
         $this->setClass('partners');
 
