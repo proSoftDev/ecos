@@ -20,7 +20,7 @@
                             <div class="col-sm-12 col-md-4 separator">
                                 <img src="<?=$v->getImage();?>">
                                 <h2><?=$v->getName();?></h2>
-                                <a class="moreOfProductions" href="/product/all?id=<?=$v->id;?>"><?=Yii::$app->view->params['translation'][39]->text;?></a>
+                                <a class="moreOfProductions" href="/partner?id=<?=$v->id;?>"><?=Yii::$app->view->params['translation'][39]->text;?></a>
                             </div>
                 <? if($m % 6 == 0):?>
                         </div>
