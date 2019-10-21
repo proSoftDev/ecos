@@ -29,6 +29,7 @@ class SearchController extends FrontendController
     {
         Yii::$app->view->params['page'] = 'services';
         $this->setMeta('Поиск', "", "");
+        $text = $keyword;
         $search = $text;
 		if($text){
             $menu = Menu::find()->all();

@@ -88,7 +88,7 @@ class ProductController extends FrontendController
     {
 
         unset($_SESSION['category_id'],$_SESSION['sub_category_id'],$_SESSION['partner_id'],$_SESSION['text']);
-        $model = Menu::getModel("/product/all");
+        $model = Menu::getModel("/product/partners");
         $product = Product::getAllProduct();
         $manufacturer = Catalog::getAllCatalog();
         $category = Catalog::getAllCategory();
@@ -105,7 +105,7 @@ class ProductController extends FrontendController
     {
 
         unset($_SESSION['category_id']); unset($_SESSION['sub_category_id']);
-        $model = Menu::getModel("/product/all");
+        $model = Menu::getModel("/product/partners");
         $current_partner = Catalog::findOne($_GET['id']);
         $category = Catalog::getAllCategoryByCatalog($_GET['id']);
         $subCategory = Catalog::getAllSubcategoryByCategory($category);
@@ -126,7 +126,7 @@ class ProductController extends FrontendController
         unset($_SESSION['sub_category_id']);
         $_SESSION['category_id'] = $_GET['id'];
 
-        $model = Menu::getModel("/product/all");
+        $model = Menu::getModel("/product/partners");
         $manufacturer = Catalog::getAllCatalog();
         $current_category = Catalog::findOne($_GET['id']);
         $categories =  Catalog::findAll(['name' => $current_category->name]);
