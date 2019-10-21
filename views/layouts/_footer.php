@@ -22,3 +22,11 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    function changeImg() {
+        let langValue = document.getElementById("lang").value;
+        document.getElementById("selectedLang").src = "/public/images/" + langValue + ".png";
+    };
+</script>

@@ -25,7 +25,7 @@ class SearchController extends FrontendController
 {
 
 
-    public function actionIndex($text)
+    public function actionIndex($keyword)
     {
         Yii::$app->view->params['page'] = 'services';
         $this->setMeta('Поиск', "", "");

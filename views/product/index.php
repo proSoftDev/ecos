@@ -131,6 +131,6 @@
             </div>
     </div>
 
-    <?=$this->render('/partials/partner.php')?>
+
     <div class="border mt-4"></div>
 </div>

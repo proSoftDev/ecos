@@ -2,16 +2,23 @@
     <div class="row pt-3 text-center">
         <div class="col-sm-12 col-md">
             <a href="/"><img  class="logo" src="/public/images/logo.png" alt="logo"></a>
+            <select name="lang-adaptive" class="lang-adaptive">
+                <option value="Русский" selected>Русский</option>
+                <option value="Английский">Английский</option>
+                <option value="Казахский">Казахский</option>
+            </select>
         </div>
         <div class="col-sm-12 col-md slct">
+            <img id="selectedLang" src="/public/images/lang<?=Yii::$app->session["lang"];?>.png">
             <select name="lang" class="lang" onchange="location = this.options[this.selectedIndex].value;">
                 <option value="/lang/?url=ru"  <?=(Yii::$app->session["lang"]=="")?'selected':''?>>Русский</option>
                 <option value="/lang/?url=en" <?=(Yii::$app->session["lang"]=="_en")?'selected':''?>>Английский</option>
                 <option value="/lang/?url=kz" <?=(Yii::$app->session["lang"]=="_kz")?'selected':''?>>Казахский</option>
             </select>
         </div>
-        <form class="col-sm-12 col-md" action="/search/">
-            <input class="search" type="search" placeholder="Поиск" name="text">
+
+        <form class="col-sm-12 col-md" action="/search">
+            <input class="search" type="search" placeholder="Поиск" name="keyword">
         </form>
         <div class="col-sm-12 col-md phone">
             <a class="number" href="tel:<?=Yii::$app->view->params['contact']->tel;?>"><?=Yii::$app->view->params['contact']->tel;?></a>

@@ -20,6 +20,7 @@ class PartnerController extends FrontendController
     public function actionIndex($id)
     {
 
+        $model = Menu::getModel("/partner/all");
         $partner = Catalog::findOne($id);
         if(!$partner){
             throw new NotFoundHttpException();
@@ -27,7 +28,7 @@ class PartnerController extends FrontendController
         $this->setMeta($partner->getName());
         $this->setClass('partners');
 
-        return $this->render('inner',compact('partner'));
+        return $this->render('inner',compact('partner','model'));
     }
 
 

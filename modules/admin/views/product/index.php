@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter'=>\app\models\Catalog::getList(),
                 'value' => function ($model) {
                     return
-                        Html::a($model->catalog->name, ['/admin/catalog/view', 'id' => $model->catalog->id]);
+                        Html::a($model->catalog->nameWithParent, ['/admin/catalog/view', 'id' => $model->catalog->id]);
                 },
                 'format' => 'raw',
             ],

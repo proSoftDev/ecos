@@ -15,7 +15,11 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-sm-12 col-md">
-            <p class="main-plink"><a href="/"><?=Yii::$app->view->params['main']->name;?> </a><span>/ </span><a href="<?=$model->url;?>"><?=$model->name;?> </a><span>/ </span><?=$product->getName();?></p>
+            <p class="main-plink">
+                <a href="/"><?=Yii::$app->view->params['main']->name;?>
+                </a><span>/ </span><a href="<?=$model->url;?>"><?=$model->name;?>
+                </a><span>/ </span><?=$product->getName();?>
+            </p>
         </div>
     </div>
 </div>
